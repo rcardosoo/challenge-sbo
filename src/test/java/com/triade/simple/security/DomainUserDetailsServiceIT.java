@@ -4,8 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import com.triade.simple.IntegrationTest;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
 import java.util.Locale;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;

@@ -10,9 +10,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.triade.simple.IntegrationTest;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
-import com.triade.simple.web.rest.vm.LoginVM;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
+import com.triade.simple.core.user.rest.UserJWTController;
+import com.triade.simple.core.user.rest.vm.LoginVM;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

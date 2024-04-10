@@ -1,7 +1,53 @@
-# simple
+# Documentação da API SBO - Skyward Bridge Operations
 
-This application was generated using JHipster 7.9.3, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.3](https://www.jhipster.tech/documentation-archive/v7.9.3).
+## Visão Geral
 
+Este README fornece informações sobre como interagir com a API da Ponte Basculante (SBO - Skyward Bridge Operations). A API permite operações CRUD (Create, Read, Update, Delete) em pontes basculantes, bem como movimentação das mesmas.
+
+## Autenticação
+
+Todos os endpoints da API requerem autenticação por meio de um token JWT (JSON Web Token). Você pode obter um token fazendo uma requisição POST para o endpoint de autenticação: POST /api/authenticate
+
+### Papéis de Usuário
+
+- **ADMIN**: Permite acessar endpoints de gerenciamento de pontes (CRUD) e movimentação (/move).
+- **OPERATOR**: Permite acessar apenas o endpoint de movimentação (/move).
+
+## Estados da Ponte
+
+A ponte basculante possui três campos principais que descrevem seu estado:
+
+- **position**: Indica a posição atual da ponte na plataforma.
+    - `BASE`: Na base da plataforma (no chão).
+    - `MIDDLE`: Em algum local no meio do percurso de elevação ou descida.
+    - `HIGHEST`: No ponto mais alto.
+
+- **status**: Indica se a ponte está parada ou em movimento.
+    - `STOPPED`: Parada.
+    - `MOVING`: Em movimento.
+
+- **direction**: Indica a direção que a ponte está apontando.
+    - `UP`: Próximo movimento será subir.
+    - `DOWN`: Próximo movimento será descer.
+
+## Máquina de Estados da Ponte
+
+A ponte segue uma máquina de estados conforme descrito abaixo:
+
+1. **Estado Inicial**: BASE, STOPPED, UP
+    - Endpoint `/move` acionado: Ponte vai para MIDDLE, MOVING, UP
+2. **Elevação Completa**: HIGHEST, STOPPED, DOWN (após tempo de movimentação)
+    - Se `/move` for acionado antes do tempo de movimentação terminar: MIDDLE, STOPPED, DOWN
+3. **Descida**: MIDDLE, MOVING, DOWN
+4. **Retorno à Base**: BASE, STOPPED, UP (após tempo de movimentação)
+    - Caso a ponte esteja em HIGHEST e `/move` for acionado: MIDDLE, MOVING, DOWN, e em seguida, MIDDLE, MOVING, UP.
+
+## Limitação de Operação
+
+Se a ponte estiver no ponto mais alto da elevação, será necessário aguardar 1 minuto para movimentá-la novamente. Nesse caso, uma exceção com o código 422 será retornada: "Operation blocked - please wait 1 minute to operate". 
+
+-----------------------------------
+## Jhipster documentation
 ## Project Structure
 
 Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.

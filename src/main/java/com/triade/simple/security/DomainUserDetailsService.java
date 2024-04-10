@@ -1,8 +1,8 @@
 package com.triade.simple.security;
 
-import com.triade.simple.domain.Authority;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
+import com.triade.simple.core.user.domain.Authority;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
 import java.util.*;
 import java.util.stream.Collectors;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;

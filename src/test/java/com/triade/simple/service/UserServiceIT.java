@@ -4,10 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import com.triade.simple.IntegrationTest;
-import com.triade.simple.config.Constants;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
-import com.triade.simple.service.dto.AdminUserDTO;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
+import com.triade.simple.core.user.service.UserService;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -20,8 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.auditing.AuditingHandler;
 import org.springframework.data.auditing.DateTimeProvider;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.security.RandomUtil;
 

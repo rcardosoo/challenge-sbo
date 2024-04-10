@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 
 import com.triade.simple.IntegrationTest;
 import com.triade.simple.config.Constants;
-import com.triade.simple.domain.User;
+import com.triade.simple.core.user.domain.User;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +22,8 @@ import javax.mail.Session;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
+import com.triade.simple.core.user.service.MailService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

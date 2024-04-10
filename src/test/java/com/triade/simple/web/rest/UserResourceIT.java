@@ -6,13 +6,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.triade.simple.IntegrationTest;
-import com.triade.simple.domain.Authority;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
+import com.triade.simple.core.user.domain.Authority;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
+import com.triade.simple.core.user.rest.UserResource;
 import com.triade.simple.security.AuthoritiesConstants;
-import com.triade.simple.service.dto.AdminUserDTO;
-import com.triade.simple.service.mapper.UserMapper;
-import com.triade.simple.web.rest.vm.ManagedUserVM;
+import com.triade.simple.core.user.service.dto.AdminUserDTO;
+import com.triade.simple.core.user.service.mapper.UserMapper;
+import com.triade.simple.core.user.rest.vm.ManagedUserVM;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.Consumer;

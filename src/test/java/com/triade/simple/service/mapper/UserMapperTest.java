@@ -2,13 +2,15 @@ package com.triade.simple.service.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.triade.simple.domain.User;
-import com.triade.simple.service.dto.AdminUserDTO;
-import com.triade.simple.service.dto.UserDTO;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.service.dto.AdminUserDTO;
+import com.triade.simple.core.user.service.dto.UserDTO;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.triade.simple.core.user.service.mapper.UserMapper;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

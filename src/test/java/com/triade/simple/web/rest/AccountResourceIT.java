@@ -7,16 +7,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.triade.simple.IntegrationTest;
 import com.triade.simple.config.Constants;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.AuthorityRepository;
-import com.triade.simple.repository.UserRepository;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.AuthorityRepository;
+import com.triade.simple.core.user.repository.UserRepository;
+import com.triade.simple.core.user.rest.AccountResource;
 import com.triade.simple.security.AuthoritiesConstants;
-import com.triade.simple.service.UserService;
-import com.triade.simple.service.dto.AdminUserDTO;
-import com.triade.simple.service.dto.PasswordChangeDTO;
-import com.triade.simple.service.dto.UserDTO;
-import com.triade.simple.web.rest.vm.KeyAndPasswordVM;
-import com.triade.simple.web.rest.vm.ManagedUserVM;
+import com.triade.simple.core.user.service.UserService;
+import com.triade.simple.core.user.service.dto.AdminUserDTO;
+import com.triade.simple.core.user.service.dto.PasswordChangeDTO;
+import com.triade.simple.core.user.rest.vm.KeyAndPasswordVM;
+import com.triade.simple.core.user.rest.vm.ManagedUserVM;
 import java.time.Instant;
 import java.util.*;
 import org.apache.commons.lang3.RandomStringUtils;

@@ -6,8 +6,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.triade.simple.IntegrationTest;
-import com.triade.simple.domain.User;
-import com.triade.simple.repository.UserRepository;
+import com.triade.simple.core.user.domain.User;
+import com.triade.simple.core.user.repository.UserRepository;
+import com.triade.simple.core.user.rest.UserResource;
 import com.triade.simple.security.AuthoritiesConstants;
 import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
